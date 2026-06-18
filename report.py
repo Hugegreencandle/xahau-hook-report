@@ -41,6 +41,10 @@ PROVER_DIR = os.environ.get("XAHC_PROVER_DIR", os.path.expanduser("~/Desktop/xah
 # CLI argument. (Param-targeted runs like `validate <KEY>` or `monotonic --field SLOT:OFF:LEN` are
 # deeper follow-ups, not part of the generic card.)
 BATTERY = [
+    ("limit", "per-tx native spend <= LIM"),
+    ("guardrail", "agent-guardrail: per-tx spend cap + destination allowlist"),
+    ("limit-iou", "per-tx IOU/issued spend <= LIM"),
+    ("period-budget", "stateful spend budget over a period stays <= PLM"),
     ("authz", "only the owner can trigger it (SC01)"),
     ("termination", "no guard-violation (tecHOOK_REJECTED) for any input"),
     ("monotonic", "persisted state never moves backwards (replay/rollback)"),
