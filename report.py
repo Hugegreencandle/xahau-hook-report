@@ -67,6 +67,7 @@ BATTERY = [
     ("emit-budget", "accept => cumulative EMITTED spend <= CAP (autonomous outgoing-spend bound; Cron primitives)"),
     ("emit-dst-lock", "accept => every emitted Payment goes only to the locked payee PAY (autonomous payee lock)"),
     ("trigger-lock", "accept-with-emit => otxn_type==ttCRON (autonomous Hook fires only on its own cron, not any tx)"),
+    ("time-release", "accept-with-emit => ledger_last_time >= CLF (vesting/scheduled release: nothing before the cliff)"),
 ]
 VERDICT = {0: ("PROVEN", "✓"), 1: ("N/A", "—"), 2: ("COUNTEREXAMPLE", "✗"), 3: ("INCONCLUSIVE", "?")}
 
