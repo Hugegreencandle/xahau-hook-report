@@ -61,6 +61,7 @@ BATTERY = [
     ("commitment", "a committed root == hash(state) (commitment integrity)"),
     ("preview-faithfulness", "a wallet's pre-sign preview matches execution (decision+state; v1)"),
     ("cron", "re-arms <= 1 CronSet per invocation (no cron stacking)"),
+    ("partial-payment", "accept => not a tfPartialPayment (no dust delivered_amount trick)"),
 ]
 VERDICT = {0: ("PROVEN", "✓"), 1: ("N/A", "—"), 2: ("COUNTEREXAMPLE", "✗"), 3: ("INCONCLUSIVE", "?")}
 
