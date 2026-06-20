@@ -63,6 +63,7 @@ BATTERY = [
     ("cron", "re-arms <= 1 CronSet per invocation (no cron stacking)"),
     ("partial-payment", "accept => not a tfPartialPayment (no dust delivered_amount trick)"),
     ("constant-product", "AMM no-drain: accept => newRX*newRY >= oldRX*oldRY (native-product regime)"),
+    ("native-amount", "accept => incoming sfAmount is native XAH (byte0 0x80 clear; no IOU-misread-as-drops)"),
 ]
 VERDICT = {0: ("PROVEN", "✓"), 1: ("N/A", "—"), 2: ("COUNTEREXAMPLE", "✗"), 3: ("INCONCLUSIVE", "?")}
 
