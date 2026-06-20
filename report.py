@@ -66,6 +66,7 @@ BATTERY = [
     ("native-amount", "accept => incoming sfAmount is native XAH (byte0 0x80 clear; no IOU-misread-as-drops)"),
     ("emit-budget", "accept => cumulative EMITTED spend <= CAP (autonomous outgoing-spend bound; Cron primitives)"),
     ("emit-dst-lock", "accept => every emitted Payment goes only to the locked payee PAY (autonomous payee lock)"),
+    ("trigger-lock", "accept-with-emit => otxn_type==ttCRON (autonomous Hook fires only on its own cron, not any tx)"),
 ]
 VERDICT = {0: ("PROVEN", "✓"), 1: ("N/A", "—"), 2: ("COUNTEREXAMPLE", "✗"), 3: ("INCONCLUSIVE", "?")}
 
