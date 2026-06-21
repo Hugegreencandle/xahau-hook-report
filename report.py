@@ -71,6 +71,7 @@ BATTERY = [
     ("inactivity-release", "accept-with-emit => now >= last_seen+TMO (dead-man-switch: release only after owner inactivity)"),
     ("split-conservation", "accept-with-emit => sum(emitted) == PER (revenue-split: exact distribution, no skim/short)"),
     ("hashlock", "accept-with-emit => a presented input hashes to committed H (HTLC escrow: release only to the preimage-holder)"),
+    ("quorum", "accept-with-emit => popcount(approval_mask & SGM) >= THR (N-of-M multisig: release only at quorum)"),
 ]
 VERDICT = {0: ("PROVEN", "✓"), 1: ("N/A", "—"), 2: ("COUNTEREXAMPLE", "✗"), 3: ("INCONCLUSIVE", "?")}
 
