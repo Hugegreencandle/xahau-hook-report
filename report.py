@@ -26,16 +26,16 @@ Usage:
 
 Exit: 0 = no counterexamples · 2 = at least one counterexample · 3 = setup/usage error.
 
-Env: XAHC (xahc binary, default ~/Desktop/xahc/target/release/xahc)
-     XAHC_PROVER_DIR (default ~/Desktop/xahc-prover)
+Env: XAHC (path to the xahc binary; required if not on PATH)
+     XAHC_PROVER_DIR (path to the xahc-prover checkout)
 """
 import json
 import os
 import subprocess
 import sys
 
-XAHC = os.environ.get("XAHC", os.path.expanduser("~/Desktop/xahc/target/release/xahc"))
-PROVER_DIR = os.environ.get("XAHC_PROVER_DIR", os.path.expanduser("~/Desktop/xahc-prover"))
+XAHC = os.environ.get("XAHC", "xahc")
+PROVER_DIR = os.environ.get("XAHC_PROVER_DIR", "")
 
 # The argless battery — invariants that give a meaningful all-inputs verdict without a hook-specific
 # CLI argument. (Param-targeted runs like `validate <KEY>` or `monotonic --field SLOT:OFF:LEN` are
